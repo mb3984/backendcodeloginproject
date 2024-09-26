@@ -19,6 +19,10 @@ app.use(cors());
 app.use("/auth", AuthRouter);
 app.use("/products", ProductRouter);
 
+app.get("/", (req, res) => {
+  console.log("welcome to loginbackendproject");
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
