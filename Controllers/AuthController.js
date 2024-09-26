@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt");
+const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const UserModel = require("../Models/User");
 
@@ -13,7 +13,7 @@ const signup = async (req, res) => {
       });
     }
     const userModel = new UserModel({ name, email, password });
-    userModel.password = await bcrypt.hash(password, 10);
+    userModel.password = await bcryptjs.hash(password, 10);
     await userModel.save();
     res.status(201).json({
       message: "Signup successfully",
@@ -39,7 +39,7 @@ const login = async (req, res) => {
       return res.status(403).json({ message: errorMsg, success: false });
     }
 
-    const isPassEqual = await bcrypt.compare(password, user.password);
+    const isPassEqual = await bcryptjs.compare(password, user.password);
     console.log("Password match:", isPassEqual); // Check if password matches
 
     if (!isPassEqual) {
