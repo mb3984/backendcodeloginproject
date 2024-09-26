@@ -7,6 +7,8 @@ const ProductRouter = require("./Routes/ProductRouter");
 
 require("./Models/db");
 
+require("dotenv").config(); // This will allow your app to use environment variables
+
 const app = express();
 const PORT = process.env.PORT || 4000;
 
