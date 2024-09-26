@@ -20,7 +20,7 @@ app.use("/auth", AuthRouter);
 app.use("/products", ProductRouter);
 
 app.get("/", (req, res) => {
-  console.log("welcome to loginbackendproject");
+  res.send("Welcome to backend todo project!");
 });
 
 app.listen(PORT, () => {
