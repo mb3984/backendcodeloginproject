@@ -1,0 +1,21 @@
+POST http://localhost:4000/auth/signup
+Content-Type: application/json
+
+{
+    "name":"madhu",
+    "email":"madhu@gmail.com",
+    "password":"madhu12"
+}
+
+###
+POST http://localhost:4000/auth/login
+Content-Type: application/json
+
+{
+    "email":"madhu@gmail.com",
+    "password":"madhu12"
+}
+
+###
+GET http://localhost:4000/products
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hZGh1QGdtYWlsLmNvbSIsIl9pZCI6IjY2ZjRmMjY5YzkyYjQwMTU1M2FkZmE2YSIsImlhdCI6MTcyNzMyODkwOCwiZXhwIjoxNzI3NDE1MzA4fQ.JfllyhzSz8EVseaOK-l3q0vuOAlZBF6_pjf4WUnD554
